@@ -9,7 +9,7 @@
 import Cocoa
 
 @available(OSX 10.12.2, *)
-extension NSGroupTouchBarItem {
+public extension NSGroupTouchBarItem {
     func update() {
         groupTouchBar.validate()
     }

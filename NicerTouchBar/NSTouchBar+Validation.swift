@@ -17,17 +17,19 @@ public extension NSTouchBar {
     private func validateItems() {
         let items = itemIdentifiers.compactMap { item(forIdentifier: $0) }
 
-        items.forEach { (item) in
-            switch item {
-            case let i as NSCustomTouchBarItem:
-                i.update()
-            case let i as NSGroupTouchBarItem:
-                i.update()
-            case let i as NSPopoverTouchBarItem:
-                i.update()
-            default:
-                break
-            }
+        items.forEach(validateItem)
+    }
+
+    private func validateItem(_ item: NSTouchBarItem) {
+        switch item {
+        case let i as NSCustomTouchBarItem:
+            i.update()
+        case let i as NSGroupTouchBarItem:
+            i.update()
+        case let i as NSPopoverTouchBarItem:
+            i.update()
+        default:
+            break
         }
     }
 }

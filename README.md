@@ -6,7 +6,7 @@ NicerTouchBar includes useful utilities for NSTouchBar/NSTouchBarItem validation
 
 ## Validation
 
-While we have NSMenuItemValidation and NSUserInterfaceValidations, as of 10.14, NSTouchBar doesn't have a good validation system. This library introduces a TouchBarItemValidations protocol, which is checked first during the touch bar validation process. As a fallback, NSUserInterfaceValidations is checked if TouchBarItemValidations isn't implemented.
+While we have NSMenuItemValidation and NSUserInterfaceValidations, as of 10.14, NSTouchBar doesn't have a good validation system. This library introduces a TouchBarItemValidations protocol, which is checked first during the touch bar validation process. As a fallback, NSUserInterfaceValidations is checked if appropriate.
 
 ```
 public protocol TouchBarItemValidations {
@@ -19,13 +19,13 @@ Validation is NSTouchBarItem-subclass dependent. Currently NSGroupTouchBarItem a
 
 ## Triggering Validation
 
-Because this validation isn't provided by the system, you have to do some work to wire it up. You can just use the validate method on NSTouchBar directly. This is manual, but can be efficient especially if your validation needs are simple.
+Because this validation isn't provided by the system, you have to do some work to wire it up. You can just use the validate method on NSTouchBar directly. This is manual, but can be efficient, especially if your validation needs are simple.
 
-A fancier way is to hook into NSWindow's didUpdateNotification. This gives you a easy way to run your validation automatically as the window processes events.
+A fancier way is to hook into NSWindow/NSApplication's didUpdateNotification. This gives you a easy way to run your validation automatically as the window/app processes events.
 
 ## Overriding a Window's TouchBar
 
-It sometimes happens that you need to override a window's default touch bar. Instead of messing with binding, you can use a handy extension on NSViewController
+It sometimes happens that you need to override a window's default touch bar. Instead of messing with binding, you can use a handy extension on NSViewController.
 
 ```
     deinit {
@@ -39,11 +39,15 @@ It sometimes happens that you need to override a window's default touch bar. Ins
     }
 ```
 
-### Carthage
+### Installation
+
+You can use [Carthage](https://github.com/Carthage/Carthage) to intall this as a static library. However, because the library relies on Objective-C categories to extend AppKit classes, you *must* include "-ObjC" in your OTHER_LDFLAGS setting.
 
 ```
 github "ChimeHQ/NicerTouchBar"
 ```
+
+Alternatively, you can just include and compile the sources directly into your project.
 
 ### Suggestions or Feedback
 

@@ -9,22 +9,19 @@
 import Cocoa
 
 @available(OSX 10.12.2, *)
-extension NSCustomTouchBarItem {
+extension NSCustomTouchBarItem: NSValidatedUserInterfaceItem {
     var control: NSControl? {
         return view as? NSControl
     }
 
-    override public var action: Selector? {
+    public var action: Selector? {
         return control?.action
     }
 
-    override public var tag: Int {
+    public var tag: Int {
         return control?.tag ?? 0
     }
-}
 
-@available(OSX 10.12.2, *)
-extension NSCustomTouchBarItem {
     private var validator: AnyObject? {
         guard let action = self.action else {
             return nil
