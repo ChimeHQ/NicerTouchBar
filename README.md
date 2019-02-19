@@ -1,6 +1,6 @@
-# NicerTouchBar
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+# NicerTouchBar
 
 NicerTouchBar includes useful utilities for NSTouchBar/NSTouchBarItem validation, as well as some convenience methods for influencing NSTouchBar behavior/setup.
 
@@ -8,7 +8,7 @@ NicerTouchBar includes useful utilities for NSTouchBar/NSTouchBarItem validation
 
 While we have NSMenuItemValidation and NSUserInterfaceValidations, as of 10.14, NSTouchBar doesn't have a good validation system. This library introduces a TouchBarItemValidations protocol, which is checked first during the touch bar validation process. As a fallback, NSUserInterfaceValidations is checked if appropriate.
 
-```
+```swift
 public protocol TouchBarItemValidations {
     @available(OSX 10.12.2, *)
     func validateTouchBarItem(_ item: NSTouchBarItem) -> Bool
@@ -23,20 +23,33 @@ Because this validation isn't provided by the system, you have to do some work t
 
 A fancier way is to hook into NSWindow/NSApplication's didUpdateNotification. This gives you a easy way to run your validation automatically as the window/app processes events.
 
+And, as a convenience, there are a few functions/extensions that make it easier to manually validate.
+
+```swift
+class MyViewController: NSViewController {
+    func myFunction() {
+        // this can be called safely before 10.12.2
+        validateTouchBar()
+        // or (cannot be called before 10.12.2)
+        touchbar?.validate()
+    }
+}
+```
+
 ## Overriding a Window's TouchBar
 
 It sometimes happens that you need to override a window's default touch bar. Instead of messing with binding, you can use a handy extension on NSViewController.
 
-```
-    deinit {
-        restoreParentWindowTouchBar()
-    }
+```swift
+deinit {
+    restoreParentWindowTouchBar()
+}
 
-    override func viewWillAppear() {
-        super.viewWillAppear()
+override func viewWillAppear() {
+    super.viewWillAppear()
 
-        becomeParentWindowTouchBarProvider()
-    }
+    becomeParentWindowTouchBarProvider()
+}
 ```
 
 ### Installation

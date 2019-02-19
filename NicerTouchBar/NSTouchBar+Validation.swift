@@ -10,7 +10,7 @@ import Cocoa
 
 @available(OSX 10.12.2, *)
 public extension NSTouchBar {
-    public func validate() {
+    func validate() {
         validateItems()
     }
 

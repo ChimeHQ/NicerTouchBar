@@ -1,5 +1,5 @@
 //
-//  NSWindowController+Binding.swift
+//  NSViewController+Binding.swift
 //  NicerTouchBar
 //
 //  Created by Matt Massicotte on 2018-12-16.
@@ -9,13 +9,13 @@
 import Cocoa
 
 public extension NSViewController {
-    public func restoreParentWindowTouchBar() {
+    func restoreParentWindowTouchBar() {
         if #available(OSX 10.12.2, *) {
             view.window?.unbind(NSBindingName(rawValue: #keyPath(touchBar)))
         }
     }
 
-    public func becomeParentWindowTouchBarProvider() {
+    func becomeParentWindowTouchBarProvider() {
         restoreParentWindowTouchBar()
 
         if #available(OSX 10.12.2, *) {
