@@ -15,7 +15,8 @@
 		C9113B3121C6AD8C0041830E /* NSCustomTouchBarItem+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9113B3021C6AD8C0041830E /* NSCustomTouchBarItem+Validation.swift */; };
 		C9113B3321C6AE6F0041830E /* NSGroupTouchBarItem+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9113B3221C6AE6F0041830E /* NSGroupTouchBarItem+Validation.swift */; };
 		C9113B3521C6AE950041830E /* NSPopoverTouchBarItem+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9113B3421C6AE950041830E /* NSPopoverTouchBarItem+Validation.swift */; };
-		C9113B3721C6AED40041830E /* NSWindowController+Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9113B3621C6AED30041830E /* NSWindowController+Binding.swift */; };
+		C9113B3721C6AED40041830E /* NSViewController+Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9113B3621C6AED30041830E /* NSViewController+Binding.swift */; };
+		C94541ED221B9631000CEFB2 /* NSViewController+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94541EC221B9631000CEFB2 /* NSViewController+Validation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,8 @@
 		C9113B3021C6AD8C0041830E /* NSCustomTouchBarItem+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSCustomTouchBarItem+Validation.swift"; sourceTree = "<group>"; };
 		C9113B3221C6AE6F0041830E /* NSGroupTouchBarItem+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSGroupTouchBarItem+Validation.swift"; sourceTree = "<group>"; };
 		C9113B3421C6AE950041830E /* NSPopoverTouchBarItem+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPopoverTouchBarItem+Validation.swift"; sourceTree = "<group>"; };
-		C9113B3621C6AED30041830E /* NSWindowController+Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSWindowController+Binding.swift"; sourceTree = "<group>"; };
+		C9113B3621C6AED30041830E /* NSViewController+Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+Binding.swift"; sourceTree = "<group>"; };
+		C94541EC221B9631000CEFB2 /* NSViewController+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+Validation.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +92,8 @@
 				C9113B3021C6AD8C0041830E /* NSCustomTouchBarItem+Validation.swift */,
 				C9113B3221C6AE6F0041830E /* NSGroupTouchBarItem+Validation.swift */,
 				C9113B3421C6AE950041830E /* NSPopoverTouchBarItem+Validation.swift */,
-				C9113B3621C6AED30041830E /* NSWindowController+Binding.swift */,
+				C9113B3621C6AED30041830E /* NSViewController+Binding.swift */,
+				C94541EC221B9631000CEFB2 /* NSViewController+Validation.swift */,
 			);
 			path = NicerTouchBar;
 			sourceTree = "<group>";
@@ -218,7 +221,8 @@
 				C9113B3121C6AD8C0041830E /* NSCustomTouchBarItem+Validation.swift in Sources */,
 				C9113B2B21C6AC960041830E /* TouchBarItemValidations.swift in Sources */,
 				C9113B3521C6AE950041830E /* NSPopoverTouchBarItem+Validation.swift in Sources */,
-				C9113B3721C6AED40041830E /* NSWindowController+Binding.swift in Sources */,
+				C9113B3721C6AED40041830E /* NSViewController+Binding.swift in Sources */,
+				C94541ED221B9631000CEFB2 /* NSViewController+Validation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,7 +279,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -339,7 +343,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
