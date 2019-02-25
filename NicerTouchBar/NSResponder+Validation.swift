@@ -1,5 +1,5 @@
 //
-//  NSViewController+Validation.swift
+//  NSResponder+Validation.swift
 //  NicerTouchBar
 //
 //  Created by Matt Massicotte on 2019-02-18.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-public extension NSViewController {
+public extension NSResponder {
     func validateTouchBar() {
         if #available(OSX 10.12.2, *) {
             touchBar?.validate()
