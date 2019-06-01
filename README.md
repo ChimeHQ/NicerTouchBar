@@ -1,4 +1,5 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
+![](https://img.shields.io/badge/Swift-5.0-orange.svg)
 
 # NicerTouchBar
 
@@ -54,13 +55,21 @@ override func viewWillAppear() {
 
 ### Installation
 
+Carthage:
+
 You can use [Carthage](https://github.com/Carthage/Carthage) to intall this as a static library. However, because the library relies on Objective-C categories to extend AppKit classes, you *must* include "-ObjC" in your OTHER_LDFLAGS setting.
 
 ```
 github "ChimeHQ/NicerTouchBar"
 ```
 
-Alternatively, you can just include and compile the sources directly into your project.
+Swift Package Manager:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/ChimeHQ/NicerTouchBar.git")
+]
+```
 
 ### Suggestions or Feedback
 
