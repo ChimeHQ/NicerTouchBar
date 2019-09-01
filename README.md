@@ -16,7 +16,7 @@ public protocol TouchBarItemValidations {
 }
 ```
 
-Validation is NSTouchBarItem-subclass dependent. Currently NSGroupTouchBarItem and NSPopoverTouchBarItem are supported. NSCustomTouchBarItem is supported as *if* its view property is a subclass of NSControl.
+Validation is NSTouchBarItem-subclass dependent. Currently NSGroupTouchBarItem and NSPopoverTouchBarItem are supported. NSCustomTouchBarItem is supported **if** its view property is a subclass of NSControl.
 
 ## Triggering Validation
 
@@ -57,7 +57,7 @@ override func viewWillAppear() {
 
 Carthage:
 
-You can use [Carthage](https://github.com/Carthage/Carthage) to intall this as a static library. However, because the library relies on Objective-C categories to extend AppKit classes, you *must* include "-ObjC" in your OTHER_LDFLAGS setting.
+You can use [Carthage](https://github.com/Carthage/Carthage) to intall this as a static library. However, because the library relies on Objective-C categories to extend AppKit classes, you **must** include "-ObjC" in your OTHER_LDFLAGS setting.
 
 ```
 github "ChimeHQ/NicerTouchBar"

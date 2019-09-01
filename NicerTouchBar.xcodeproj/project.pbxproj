@@ -43,6 +43,7 @@
 		C9113B3421C6AE950041830E /* NSPopoverTouchBarItem+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPopoverTouchBarItem+Validation.swift"; sourceTree = "<group>"; };
 		C9113B3621C6AED30041830E /* NSViewController+Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+Binding.swift"; sourceTree = "<group>"; };
 		C94541EC221B9631000CEFB2 /* NSResponder+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSResponder+Validation.swift"; sourceTree = "<group>"; };
+		C9F582F4231B484C007FE72E /* NicerTouchBar.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = NicerTouchBar.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +95,7 @@
 				C9113B3421C6AE950041830E /* NSPopoverTouchBarItem+Validation.swift */,
 				C9113B3621C6AED30041830E /* NSViewController+Binding.swift */,
 				C94541EC221B9631000CEFB2 /* NSResponder+Validation.swift */,
+				C9F582F4231B484C007FE72E /* NicerTouchBar.xcconfig */,
 			);
 			path = NicerTouchBar;
 			sourceTree = "<group>";
@@ -371,6 +373,7 @@
 		};
 		C9113B2521C6AC620041830E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9F582F4231B484C007FE72E /* NicerTouchBar.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -381,7 +384,6 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = NicerTouchBar/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -389,8 +391,6 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				PRODUCT_BUNDLE_IDENTIFIER = com.chimehq.NicerTouchBar;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -398,6 +398,7 @@
 		};
 		C9113B2621C6AC620041830E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9F582F4231B484C007FE72E /* NicerTouchBar.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -408,7 +409,6 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = NicerTouchBar/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -416,8 +416,6 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				PRODUCT_BUNDLE_IDENTIFIER = com.chimehq.NicerTouchBar;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
