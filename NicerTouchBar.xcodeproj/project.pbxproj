@@ -16,6 +16,7 @@
 		C9113B3321C6AE6F0041830E /* NSGroupTouchBarItem+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9113B3221C6AE6F0041830E /* NSGroupTouchBarItem+Validation.swift */; };
 		C9113B3521C6AE950041830E /* NSPopoverTouchBarItem+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9113B3421C6AE950041830E /* NSPopoverTouchBarItem+Validation.swift */; };
 		C9113B3721C6AED40041830E /* NSViewController+Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9113B3621C6AED30041830E /* NSViewController+Binding.swift */; };
+		C91AE5C4236B06CA00F3B364 /* TouchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91AE5C3236B06CA00F3B364 /* TouchBarDelegate.swift */; };
 		C94541ED221B9631000CEFB2 /* NSResponder+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94541EC221B9631000CEFB2 /* NSResponder+Validation.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,8 @@
 		C9113B3221C6AE6F0041830E /* NSGroupTouchBarItem+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSGroupTouchBarItem+Validation.swift"; sourceTree = "<group>"; };
 		C9113B3421C6AE950041830E /* NSPopoverTouchBarItem+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPopoverTouchBarItem+Validation.swift"; sourceTree = "<group>"; };
 		C9113B3621C6AED30041830E /* NSViewController+Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+Binding.swift"; sourceTree = "<group>"; };
+		C91AE5C2236B009100F3B364 /* NicerTouchBarTests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = NicerTouchBarTests.xcconfig; sourceTree = "<group>"; };
+		C91AE5C3236B06CA00F3B364 /* TouchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarDelegate.swift; sourceTree = "<group>"; };
 		C94541EC221B9631000CEFB2 /* NSResponder+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSResponder+Validation.swift"; sourceTree = "<group>"; };
 		C9F582F4231B484C007FE72E /* NicerTouchBar.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = NicerTouchBar.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +108,8 @@
 			children = (
 				C9113B1E21C6AC620041830E /* NicerTouchBarTests.swift */,
 				C9113B2021C6AC620041830E /* Info.plist */,
+				C91AE5C2236B009100F3B364 /* NicerTouchBarTests.xcconfig */,
+				C91AE5C3236B06CA00F3B364 /* TouchBarDelegate.swift */,
 			);
 			path = NicerTouchBarTests;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C91AE5C4236B06CA00F3B364 /* TouchBarDelegate.swift in Sources */,
 				C9113B1F21C6AC620041830E /* NicerTouchBarTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +428,7 @@
 		};
 		C9113B2821C6AC620041830E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C91AE5C2236B009100F3B364 /* NicerTouchBarTests.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -440,6 +447,7 @@
 		};
 		C9113B2921C6AC620041830E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C91AE5C2236B009100F3B364 /* NicerTouchBarTests.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
