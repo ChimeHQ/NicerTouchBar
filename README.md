@@ -4,11 +4,11 @@
 
 # NicerTouchBar
 
-NicerTouchBar includes useful utilities for NSTouchBar/NSTouchBarItem validation, as well as some convenience methods for influencing NSTouchBar behavior/setup.
+NicerTouchBar includes useful utilities for NSTouchBar/NSTouchBarItem validation, as well as some convenience methods for influencing `NSTouchBar` behavior/setup.
 
 ## Validation
 
-While we have NSMenuItemValidation and NSUserInterfaceValidations, as of 10.14, NSTouchBar doesn't have a good validation system. This library introduces a TouchBarItemValidations protocol, which is checked first during the touch bar validation process. As a fallback, NSUserInterfaceValidations is checked if appropriate.
+While we have `NSMenuItemValidation` and `NSUserInterfaceValidations`, as of 10.15, `NSTouchBar` doesn't have a good validation system. This library introduces a `TouchBarItemValidations` protocol, which is checked first during the touch bar validation process. As a fallback, `NSUserInterfaceValidations` is checked if appropriate.
 
 ```swift
 public protocol TouchBarItemValidations {
@@ -17,13 +17,13 @@ public protocol TouchBarItemValidations {
 }
 ```
 
-Validation is NSTouchBarItem-subclass dependent. Currently NSGroupTouchBarItem and NSPopoverTouchBarItem are supported. NSCustomTouchBarItem is supported **if** its view property is a subclass of NSControl.
+Validation is `NSTouchBarItem`-subclass dependent. Currently, `NSGroupTouchBarItem` and `NSPopoverTouchBarItem` are supported. `NSCustomTouchBarItem` is supported **if** its view property is a subclass of `NSControl`.
 
 ## Triggering Validation
 
-Because this validation isn't provided by the system, you have to do some work to wire it up. You can just use the validate method on NSTouchBar directly. This is manual, but can be efficient, especially if your validation needs are simple.
+Because this validation isn't provided by the system, you have to do some work to wire it up. You can just use the `validate` method on `NSTouchBar` directly. This is manual, but can be efficient, especially if your validation needs are simple.
 
-A fancier way is to hook into NSWindow/NSApplication's didUpdateNotification. This gives you a easy way to run your validation automatically as the window/app processes events.
+A fancier way is to hook into NSWindow/NSApplication's `didUpdateNotification`. This gives you a easy way to run your validation automatically as the window/app processes events.
 
 And, as a convenience, there are a few functions/extensions that make it easier to manually validate.
 
@@ -40,7 +40,7 @@ class MyViewController: NSViewController {
 
 ## Overriding a Window's TouchBar
 
-It sometimes happens that you need to override a window's default touch bar. Instead of messing with binding, you can use a handy extension on NSViewController.
+It sometimes happens that you need to override a window's default touch bar. Instead of messing with binding, you can use a handy extension on `NSViewController`.
 
 ```swift
 deinit {
