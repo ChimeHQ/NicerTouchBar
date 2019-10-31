@@ -1,3 +1,4 @@
+[![Github CI](https://github.com/ChimeHQ/NicerTouchBar/workflows/CI/badge.svg)](https://github.com/ChimeHQ/NicerTouchBar/actions)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 ![](https://img.shields.io/badge/Swift-5.0-orange.svg)
 

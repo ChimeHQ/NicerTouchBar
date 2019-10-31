@@ -10,25 +10,22 @@ import XCTest
 @testable import NicerTouchBar
 
 class NicerTouchBarTests: XCTestCase {
+    func testTouchBarValidation() {
+        let delegate = TouchBarDelegate()
+        let touchBar = NSTouchBar()
+        touchBar.defaultItemIdentifiers = [.testItem1]
+        touchBar.delegate = delegate
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+        var validatedItem: NSTouchBarItem? = nil
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+        delegate.validationHandler = { (item) in
+            validatedItem = item
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+            return true
         }
-    }
 
+        touchBar.validate()
+
+        XCTAssertEqual(validatedItem?.identifier, .testItem1)
+    }
 }
