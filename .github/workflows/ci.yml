@@ -17,6 +17,7 @@ jobs:
     runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v1
-      - name: xcodebuild test
+      - name: install swiftlint
         run: HOMEBREW_NO_INSTALL_CLEANUP=1 brew install swiftlint
+      - name: xcodebuild test
         run: set -o pipefail && xcodebuild test -scheme NicerTouchBar -destination "platform=macOS" | xcpretty
