@@ -133,7 +133,7 @@
 			buildConfigurationList = C9113B2421C6AC620041830E /* Build configuration list for PBXNativeTarget "NicerTouchBar" */;
 			buildPhases = (
 				C9113B0B21C6AC610041830E /* Headers */,
-				C9C7D77B23B1332900282686 /* Swiftlint */,
+				C9C7D77B23B1332900282686 /* SwiftLint */,
 				C9113B0C21C6AC610041830E /* Sources */,
 				C9113B0D21C6AC610041830E /* Frameworks */,
 				C9113B0E21C6AC610041830E /* Resources */,
@@ -221,7 +221,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C9C7D77B23B1332900282686 /* Swiftlint */ = {
+		C9C7D77B23B1332900282686 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -230,14 +230,14 @@
 			);
 			inputPaths = (
 			);
-			name = Swiftlint;
+			name = SwiftLint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -euxo pipefail\n\nswiftlint\n";
+			shellScript = "set -euxo pipefail\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

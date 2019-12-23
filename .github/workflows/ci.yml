@@ -19,3 +19,9 @@ jobs:
       - uses: actions/checkout@v1
       - name: xcodebuild test
         run: set -o pipefail && xcodebuild test -scheme NicerTouchBar -destination "platform=macOS" | xcpretty
+  SwiftLint:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: GitHub Action for SwiftLint
+        uses: norio-nomura/action-swiftlint@3.0.1
