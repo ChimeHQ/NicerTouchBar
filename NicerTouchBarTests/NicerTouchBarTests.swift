@@ -16,7 +16,7 @@ class NicerTouchBarTests: XCTestCase {
         touchBar.defaultItemIdentifiers = [.testItem1]
         touchBar.delegate = delegate
 
-        var validatedItem: NSTouchBarItem? = nil
+        var validatedItem: NSTouchBarItem?
 
         delegate.validationHandler = { (item) in
             validatedItem = item
