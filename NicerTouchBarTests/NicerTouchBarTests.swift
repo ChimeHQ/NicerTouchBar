@@ -10,11 +10,12 @@ import XCTest
 @testable import NicerTouchBar
 
 class NicerTouchBarTests: XCTestCase {
-    func testTouchBarValidation() {
+    func testTouchBarCustomItemValidation() {
         let delegate = TouchBarDelegate()
+
         let touchBar = NSTouchBar()
-        touchBar.defaultItemIdentifiers = [.testItem1]
         touchBar.delegate = delegate
+        touchBar.defaultItemIdentifiers = [.testCustomItem]
 
         var validatedItem: NSTouchBarItem?
 
@@ -26,6 +27,41 @@ class NicerTouchBarTests: XCTestCase {
 
         touchBar.validate()
 
-        XCTAssertEqual(validatedItem?.identifier, .testItem1)
+        XCTAssertEqual(validatedItem?.identifier, .testCustomItem)
+    }
+
+    func testTouchBarPopoverValidation() {
+        let popoverDelegate = TouchBarDelegate()
+        let popoverTouchBar = NSTouchBar()
+
+        popoverTouchBar.defaultItemIdentifiers = [.testCustomItem]
+        popoverTouchBar.delegate = popoverDelegate
+
+        var validatedItems = [NSTouchBarItem]()
+
+        popoverDelegate.validationHandler = { (item) in
+            validatedItems.append(item)
+
+            return true
+        }
+
+        let delegate = TouchBarDelegate()
+        delegate.popoverTouchBar = popoverTouchBar
+        
+        let touchBar = NSTouchBar()
+
+        touchBar.delegate = delegate
+        touchBar.defaultItemIdentifiers = [.testPopoverItem]
+
+        delegate.validationHandler = { (item) in
+            validatedItems.append(item)
+
+            return true
+        }
+
+        touchBar.validate()
+
+        XCTAssertEqual(validatedItems.count, 1)
+        XCTAssertEqual(validatedItems[0].identifier, .testCustomItem)
     }
 }

@@ -10,15 +10,17 @@ import Cocoa
 import NicerTouchBar
 
 extension NSTouchBarItem.Identifier {
-    static let testItem1 = NSTouchBarItem.Identifier("com.chimehq.NicerTouchBar.test-item-1")
+    static let testCustomItem = NSTouchBarItem.Identifier("com.chimehq.NicerTouchBar.test-custom-item")
+    static let testPopoverItem = NSTouchBarItem.Identifier("com.chimehq.NicerTouchBar.test-popover-item")
 }
 
 class TouchBarDelegate: NSObject, NSTouchBarProvider {
     var touchBar: NSTouchBar?
+    var popoverTouchBar: NSTouchBar?
 
     var validationHandler: ((NSTouchBarItem) -> Bool)?
 
-    @objc func testAction1(_ sender: Any?) {
+    @objc func testCustomItemAction(_ sender: Any?) {
 
     }
 }
@@ -26,11 +28,19 @@ class TouchBarDelegate: NSObject, NSTouchBarProvider {
 extension TouchBarDelegate: NSTouchBarDelegate {
     func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
         switch identifier {
-        case .testItem1:
+        case .testCustomItem:
             let item = NSCustomTouchBarItem(identifier: identifier)
 
             item.customizationLabel = "button customization label"
-            item.view = NSButton(title: "hello", target: self, action: #selector(testAction1(_:)))
+            item.view = NSButton(title: "hello", target: self, action: #selector(testCustomItemAction(_:)))
+
+            return item
+        case .testPopoverItem:
+            let item = NSPopoverTouchBarItem(identifier: identifier)
+
+            if let popoverBar = popoverTouchBar {
+                item.popoverTouchBar = popoverBar
+            }
 
             return item
         default:
