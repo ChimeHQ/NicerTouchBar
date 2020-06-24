@@ -47,7 +47,7 @@ class NicerTouchBarTests: XCTestCase {
 
         let delegate = TouchBarDelegate()
         delegate.popoverTouchBar = popoverTouchBar
-        
+
         let touchBar = NSTouchBar()
 
         touchBar.delegate = delegate
