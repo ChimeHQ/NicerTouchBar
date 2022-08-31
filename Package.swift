@@ -10,7 +10,7 @@ let package = Package(
     ],
     dependencies: [],
     targets: [
-        .target(name: "NicerTouchBar", dependencies: [], path: "NicerTouchBar/"),
-        .testTarget(name: "NicerTouchBarTests", dependencies: ["NicerTouchBar"], path: "NicerTouchBarTests/"),
+        .target(name: "NicerTouchBar", dependencies: []),
+        .testTarget(name: "NicerTouchBarTests", dependencies: ["NicerTouchBar"]),
     ]
 )

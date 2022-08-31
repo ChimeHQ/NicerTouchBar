@@ -1,10 +1,10 @@
-[![Github CI](https://github.com/ChimeHQ/NicerTouchBar/workflows/CI/badge.svg)](https://github.com/ChimeHQ/NicerTouchBar/actions)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
-![](https://img.shields.io/badge/Swift-5.0-orange.svg)
+[![Build Status][build status badge]][build status]
+[![License][license badge]][license]
+[![Platforms][platforms badge]][platforms]
 
 # NicerTouchBar
 
-NicerTouchBar includes useful utilities for NSTouchBar/NSTouchBarItem validation, as well as some convenience methods for influencing `NSTouchBar` behavior/setup.
+NicerTouchBar includes useful utilities for `NSTouchBar`/`NSTouchBarItem` validation, as well as some convenience methods for influencing `NSTouchBar` behavior/setup.
 
 ## Validation
 
@@ -56,19 +56,9 @@ override func viewWillAppear() {
 
 ### Installation
 
-Carthage:
-
-You can use [Carthage](https://github.com/Carthage/Carthage) to intall this as a static library. However, because the library relies on Objective-C categories to extend AppKit classes, you **must** include "-ObjC" in your OTHER_LDFLAGS setting.
-
-```
-github "ChimeHQ/NicerTouchBar"
-```
-
-Swift Package Manager:
-
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ChimeHQ/NicerTouchBar.git")
+    .package(url: "https://github.com/ChimeHQ/NicerTouchBar")
 ]
 ```
 
@@ -77,3 +67,10 @@ dependencies: [
 We'd love to hear from you! Get in touch via [twitter](https://twitter.com/chimehq), an issue, or a pull request.
 
 Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+
+[build status]: https://github.com/ChimeHQ/NicerTouchBar/actions
+[build status badge]: https://github.com/ChimeHQ/NicerTouchBar/workflows/CI/badge.svg
+[license]: https://opensource.org/licenses/BSD-3-Clause
+[license badge]: https://img.shields.io/github/license/ChimeHQ/NicerTouchBar
+[platforms]: https://swiftpackageindex.com/ChimeHQ/NicerTouchBar
+[platforms badge]: https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FChimeHQ%2FNicerTouchBar%2Fbadge%3Ftype%3Dplatforms
